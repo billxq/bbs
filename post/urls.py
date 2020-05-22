@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.conf.urls import url
 from post import views
 
 urlpatterns = [
     path('hello/', views.hello_django_bbs),
+    path('topic_list/', views.topic_list_view),
+    url(r'topic/(?P<topic_id>\d+)/', views.topic_detail_view),
 ]
