@@ -1,5 +1,6 @@
 from post.models import Comment, Topic
 
+
 def build_topic_base_info(topic):
     return {
         'id': topic.id,
@@ -32,3 +33,8 @@ def bulid_topic_detail_info(topic):
         'last_modified': topic.last_modified.strftime('%Y-%m-%d %H:%M:%S'),
         'comments': [build_comment_info(comment) for comment in comment_qs]
     }
+
+
+# 增加评论的业务逻辑
+def add_comment_to_topic(topic, content):
+    return Comment.objects.create(topic=topic, content=content)

@@ -21,4 +21,5 @@ urlpatterns = [
     path('hello/', views.hello_django_bbs),
     path('topic_list/', views.topic_list_view),
     url(r'topic/(?P<topic_id>\d+)/', views.topic_detail_view),
+    path('topic_comment/', views.add_comment_to_topic_view),
 ]
